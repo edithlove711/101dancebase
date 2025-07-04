@@ -12,7 +12,7 @@
     <script>
       async function main() {
         try {
-          document.getElementById("status").innerText = "初始化 LIFF 中...";
+          document.getElementById("status").innerText = "初始化中...";
           await liff.init({ liffId: "2007694269-P5MJkAJ7" });
 
           let userId = "";
@@ -20,8 +20,8 @@
             const profile = await liff.getProfile();
             userId = profile.userId;
           }
-
-          const formBase = "https://docs.google.com/forms/d/e/1FAIpQLSf-JyFPiZX_PH8hwLJo4KsBzgVhqV-6jmsLJ0CZDPWQK-ciTQ/viewform";
+          //表單連結，1129681516是填lineid的表格id，有變動也要改
+          const formBase = "https://docs.google.com/forms/d/e/1FAIpQLSfJE-6gzbEg9BanfGGgD2zz_C-GWGrC9SvKGdvF7k_sV2ducQ/viewform";
           const entryParam = "entry.1129681516=" + encodeURIComponent(userId);
           const fullUrl = `${formBase}?${entryParam}`;
 
